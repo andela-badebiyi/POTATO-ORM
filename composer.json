@@ -1,0 +1,14 @@
+{
+	"autoload": {
+		"psr-4": {
+			"app\\": "lib/",
+			"app\\tests\\": "tests/",
+			"app\\exceptions\\": "exceptions/",
+			"app\\database\\": "database/"
+		}
+	},
+    "require-dev":{
+		"phpunit/phpunit": ">=4.8",
+		"satooshi/php-coveralls": "^0.6.1"
+	}
+}
