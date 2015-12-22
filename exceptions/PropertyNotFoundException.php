@@ -1,5 +1,7 @@
 <?php
+
 namespace app\exceptions;
+
 /**
  * Custom exception class used by the Model
  * This exception is thrown when a user tries to access
