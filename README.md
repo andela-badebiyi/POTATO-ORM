@@ -1,5 +1,4 @@
 [![StyleCI](https://styleci.io/repos/48433248/shield)](https://styleci.io/repos/48433248)
-[![Circle CI](https://circleci.com/gh/andela-badebiyi/checkpoint-2.svg?style=svg)](https://circleci.com/gh/andela-badebiyi/checkpoint-2)
 [![Coverage Status](https://coveralls.io/repos/andela-badebiyi/checkpoint-2/badge.svg?branch=develop&service=github)](https://coveralls.io/github/andela-badebiyi/checkpoint-2?branch=develop)
 [![Build Status](https://travis-ci.org/andela-badebiyi/checkpoint-2.svg)](https://travis-ci.org/andela-badebiyi/checkpoint-2)
 
@@ -8,7 +7,7 @@
 ##Summary
 This is my third checkpoint for my andela simulations. This project is a poor man's ORM called the Potato ORM that provides an easy and elegant way to interact with a database.
 
-The `lib` directory contains the base model class of our ORM. Inside the `database` directory contains the `Db` class used by the base model to connect and query the database, also there's the `QueryConstructor` class used by the `Db` class to easily construct queries and finally there's the `test.db` sqlite database file used by out test classes.
+The `src` directory contains the base model class of our ORM. Inside the `database` directory contains the `Db` class used by the base model to connect and query the database, also there's the `QueryConstructor` class used by the `Db` class to easily construct queries and finally there's the `test.db` sqlite database file used by out test classes.
 
 The `tests` directory contains all our phpunit tests while the `exceptions` directory holds the classes of all our custom exceptions that are generated in the Base Model and Db class.
 
