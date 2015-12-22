@@ -108,7 +108,7 @@ class Model
 
         //if transaction failed return null else return object
         if ($record === false) {
-            return;
+            return null;
         } else {
             $obj = new self($tbl_name);
             foreach ($columns as $name) {
