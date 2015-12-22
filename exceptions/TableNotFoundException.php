@@ -1,12 +1,14 @@
 <?php
+
 namespace app\exceptions;
+
 /**
  * Custom exception class
  * this custom exception is thrown when a user tries to create a model
- * for a table that doesn't exist in the database
+ * for a table that doesn't exist in the database.
+ *
  * @author Adebiyi Bodunde
  */
-
 class TableNotFoundException extends \Exception
 {
     /**
@@ -22,7 +24,7 @@ class TableNotFoundException extends \Exception
      */
     public function errorMessage()
     {
-        $errorMsg = "This table does not exist in the database";
+        $errorMsg = 'This table does not exist in the database';
 
         return $errorMsg;
     }
