@@ -153,12 +153,12 @@ class Db
             }
 
             if ($output === false) {
-                return;
+                return null;
             } else {
                 return $output;
             }
         } else {
-            return;
+            return null;
         }
     }
 

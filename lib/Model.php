@@ -107,7 +107,7 @@ class Model
         $record = $db->findWhere('id = '.$id);
 
         //if transaction failed return null else return object
-        if ($record === false) {
+        if ($record === false || $record === null) {
             return null;
         } else {
             $obj = new self($tbl_name);
