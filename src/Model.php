@@ -40,25 +40,7 @@ class Model
         //retrieve columns
         $this->columns = $this->db->getColumns();
     }
-
-    /**
-     * Magic method to retrieve data from table column
-     * This magic method creates dynamic class properties, these properties
-     * would be the name of the columns in the table.
-     *
-     * @param [[string]] $name [[name of dynamic class property]]
-     *
-     * @return [[string]]
-     */
-    public function __get($name)
-    {
-        if (in_array($name, $this->columns)) {
-            return $this->$name;
-        } else {
-            throw new PropertyNotFoundException('Property does not exist');
-        }
-    }
-
+    
     /**
      * Magic method to set values that would be stored in the database
      * This magic method creates dynamic class properties, these properties
@@ -73,6 +55,24 @@ class Model
     {
         if (in_array($name, $this->columns)) {
             $this->$name = $value;
+        } else {
+            throw new PropertyNotFoundException('Property does not exist');
+        }
+    }
+
+    /**
+     * Magic method to retrieve data from table column
+     * This magic method creates dynamic class properties, these properties
+     * would be the name of the columns in the table.
+     *
+     * @param [[string]] $name [[name of dynamic class property]]
+     *
+     * @return [[string]]
+     */
+    public function __get($name)
+    {
+        if (in_array($name, $this->columns)) {
+            return $this->$name;
         } else {
             throw new PropertyNotFoundException('Property does not exist');
         }
@@ -99,11 +99,11 @@ class Model
     {
         $tbl_name = static::staticMethodInitializer();
 
-        //connect to db and get table feilds
+        //connect to db and get table fields
         $db = new Db(strtolower($tbl_name));
         $columns = $db->getColumns();
 
-        //get retrieve record
+        //retrieve record
         $record = $db->findWhere('id = '.$id);
 
         //if transaction failed return null else return object
