@@ -4,7 +4,4 @@
            <directory>./tests</directory>
        </testsuite>
    </testsuites>
-   <whitelist>
-    	<directory>./exceptions</directory>
-	</whitelist>
 </phpunit>
