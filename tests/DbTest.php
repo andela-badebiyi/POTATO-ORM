@@ -8,6 +8,8 @@ class DbTest extends \PHPUnit_Framework_TestCase
 {
 	/**
 	 * @expectedException app\exceptions\TableNotFoundException
+	 * @expectedExceptionMessage Table does not exist
+	 * @expectedErrorCode 1
 	 */
 	public function testForNonExistentTable()
 	{

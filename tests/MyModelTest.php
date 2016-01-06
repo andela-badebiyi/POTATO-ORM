@@ -24,6 +24,22 @@ class MyModelTest extends \PHPUnit_Framework_TestCase
 		$myModel->invalidField;
 	}
 
+	public function testForValidModelFields()
+	{
+		$myModel = new MyModel;
+		$myModel->name = "Bodunde";
+		$myModel->name;
+	}
+
+	/**
+	 * @expectedException app\exceptions\PropertyNotFoundException
+	 */
+	public function testAssignToInvalidField()
+	{
+		$myModel = new MyModel;
+		$myModel->invalidField = "Invalid field data";	
+	}
+
 	public function testGetTableName()
 	{
 		$myModel = new MyModel;
@@ -53,6 +69,11 @@ class MyModelTest extends \PHPUnit_Framework_TestCase
 		$rec = MyModel::findWhere("name = '".$record->name."'");
 
 		$this->assertEquals($record->name, $rec->name);
+
+		//test find using option 'all'
+		$rec2 = MyModel::findWhere("id > 1", true);		
+		$this->assertInternalType('array', $rec2);
+		$this->assertGreaterThanOrEqual(1, count($rec2));
 	}
 
 	public function testGetAll()

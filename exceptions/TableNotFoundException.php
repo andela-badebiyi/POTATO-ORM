@@ -14,26 +14,9 @@ class TableNotFoundException extends \Exception
     /**
      * Overrides the parent constructor method.
      */
-    public function __construct($message = null, $code = 1)
+    public function __construct($message = 'Table does not exist', $code = 1)
     {
         parent::__construct($message, $code);
     }
 
-    /**
-     * @return string Returns the error message that accompanies the custom exception
-     */
-    public function errorMessage()
-    {
-        $errorMsg = 'This table does not exist in the database';
-
-        return $errorMsg;
-    }
-
-    /**
-     * @return int Returns the error code that accompanies the custom exception
-     */
-    public function errorCode()
-    {
-        return 1;
-    }
 }
