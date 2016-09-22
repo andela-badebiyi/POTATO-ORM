@@ -35,7 +35,7 @@ $myModel->save(); //returns false if saving failed and returns id of record if s
 MyModel::find(1); //where 1 is the id of the record in the database
 
 //find a record using sql where clause condition
-MyModel::findWhere("name = 'John Doe', true); 
+MyModel::findWhere("name = 'John Doe', true"); 
 //setting second argument to true returns all records, not setting it returns just the first
 
 //get all records
